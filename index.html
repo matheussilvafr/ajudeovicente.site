@@ -468,6 +468,16 @@ onStylesLoadEvent=new Event("two_css_loaded");window.dispatchEvent(onStylesLoadE
                                 });
                             </script>
 
-
+<script>
+    window.onload = function () {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0, n = links.length; i < n; i++) {
+            var href = links[i].href.trim() +
+                    (links[i].href.indexOf("?") > 0 ? '&' : '?') +
+                    document.location.search.replace('?', '').toString();
+            links[i].href = href;
+        }
+    }
+</script>
                     <script async="true" src="https://cdn1.123tp.net/js/123global.js"></script>
                 </body></html>
